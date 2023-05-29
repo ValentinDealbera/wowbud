@@ -41,9 +41,9 @@ function RootLayoutNav() {
   return (
     <>
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        <Stack screenOptions={{headerTitleAlign: 'center', headerStyle : {backgroundColor: '#232323'}, headerTintColor: '#fff'}}>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="home"/>
         </Stack>
       </ThemeProvider>
     </>

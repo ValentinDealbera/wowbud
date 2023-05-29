@@ -1,9 +1,12 @@
+import { useNavigation } from '@react-navigation/native';
 import { Link, Stack } from 'expo-router';
 import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
 export default function NotFoundScreen() {
+  const navigation = useNavigation()  
+  
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
