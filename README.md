@@ -2,7 +2,7 @@
 
 Welcome to the WoW Bud GitHub repository! 🎉
 
-![WoW Bud Logo](link_to_logo)
+(here should be a logo, You can do it if you're interested!)
 
 ## About
 
