@@ -43,7 +43,7 @@ export default function Class() {
         </View>
     <View style={styles.container}>
       {actualClass?.specs.map((e,i)=>{
-        return <IndividualCard URL={`/classes/${actualClass?.URL}/${e.name}`} name={e.name} image={require('../../../assets/images/bgg.jpeg')} />
+        return <IndividualCard key={i} URL={`/classes/${actualClass?.URL}/${e.URL}`} name={e.name} image={e.image} />
       })}
     </View>
     </ScrollView>

@@ -15,6 +15,10 @@ export default function Spec() {
   const actualClass = classes.find((cl)=>{
     return cl.URL === params.class
   })
+
+  const actualSpec = actualClass?.specs.find((cl)=>{
+    return cl.URL === params.spec
+  })
   
 
   let [fontsLoaded] = useFonts({
@@ -26,7 +30,7 @@ export default function Spec() {
     return null;
   }
   return (
-      <ImageBackground source={require('../../../../assets/images/bgg.jpeg')} style={styles.bgimage}>
+      <ImageBackground source={actualSpec?.bg ? actualSpec.bg : require('../../../../assets/images/bgg.jpeg')} style={styles.bgimage}>
         <LinearGradient
         colors={['rgba(0, 0, 0, 0.144)', 'rgba(0, 0, 0, 0.9)']}
         start={[0, 0]}
@@ -38,12 +42,12 @@ export default function Spec() {
         <View style={{paddingVertical: 15,
     alignItems: 'center',
     gap: 30}}>
-            <Text style={{borderRadius: 10,backgroundColor: '#232323', paddingHorizontal: 10, paddingVertical:5 , fontSize: 28, color: '#fff', textAlign: 'center'}}>{params.spec}</Text>
+            <Text style={{borderRadius: 10,backgroundColor: '#232323', paddingHorizontal: 10, paddingVertical:5 , fontSize: 28, color: '#fff', textAlign: 'center'}}>{actualSpec?.name}</Text>
         </View>
     <View style={styles.container}>
-    <IndividualCard URL={`/classes/${actualClass?.URL}/${params.spec}/overview`} name={'Class Ovewview'} image={require('../../../../assets/images/bgg.jpeg')} />
-    <IndividualCard URL={`/classes/${actualClass?.URL}/${params.spec}/talents`} name={'Talents'} image={require('../../../../assets/images/bgg.jpeg')} />
-        <IndividualCard URL={`/classes/${actualClass?.URL}/${params.spec}/rotation`} name={'Basic Rotation'} image={require('../../../../assets/images/bgg.jpeg')} />
+    <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/overview`} name={'Class Ovewview'} image={require('../../../../assets/images/bgg.jpeg')} />
+    <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/talents`} name={'Talents'} image={require('../../../../assets/images/bgg.jpeg')} />
+        <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/rotation`} name={'Basic Rotation'} image={require('../../../../assets/images/bgg.jpeg')} />
     </View>
     </ScrollView>
     </View>

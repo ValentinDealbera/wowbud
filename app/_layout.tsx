@@ -43,7 +43,10 @@ function RootLayoutNav() {
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack screenOptions={{headerTitleAlign: 'center', headerStyle : {backgroundColor: '#232323'}, headerTintColor: '#fff'}}>
           <Stack.Screen name="index" options={{ headerShown: false }} />
-          <Stack.Screen name="home"/>
+          <Stack.Screen name="home" options={{headerTitle: 'WoW BuD'}}/>
+          <Stack.Screen name="classes/index" options={{headerTitle: 'WoW BuD'}}/>
+          <Stack.Screen name="classes/[class]/index" options={{headerTitle: 'WoW BuD'}}/>
+          <Stack.Screen name="classes/[class]/[spec]/index" options={{headerTitle: 'WoW BuD'}}/>
         </Stack>
       </ThemeProvider>
     </>
