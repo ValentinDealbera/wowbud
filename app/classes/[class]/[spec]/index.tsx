@@ -38,18 +38,16 @@ export default function Spec() {
         style={styles.gradient}
       >
         <View style={{flex: 1, height: '100%'}}>
-            <ScrollView>
         <View style={{paddingVertical: 15,
     alignItems: 'center',
     gap: 30}}>
             <Text style={{borderRadius: 10,backgroundColor: '#232323', paddingHorizontal: 10, paddingVertical:5 , fontSize: 28, color: '#fff', textAlign: 'center'}}>{actualSpec?.name}</Text>
         </View>
     <View style={styles.container}>
-    <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/overview`} name={'Class Ovewview'} image={require('../../../../assets/images/bgg.jpeg')} />
-    <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/talents`} name={'Talents'} image={require('../../../../assets/images/bgg.jpeg')} />
-        <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/rotation`} name={'Basic Rotation'} image={require('../../../../assets/images/bgg.jpeg')} />
+    <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/overview`} name={'Class Ovewview'} image={actualSpec?.ClassOverviewImg || require('../../../../assets/images/bgg.jpeg')} />
+    <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/talents`} name={'Talents'} image={actualSpec?.TalentsImg || require('../../../../assets/images/bgg.jpeg')} />
+        <IndividualCard URL={`/classes/${actualClass?.URL}/${actualSpec?.URL}/rotation`} name={'Basic Rotation'} image={actualSpec?.BasicRotationImg || require('../../../../assets/images/bgg.jpeg')} />
     </View>
-    </ScrollView>
     </View>
     </LinearGradient>
       </ImageBackground>

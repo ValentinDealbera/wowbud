@@ -27,7 +27,7 @@ export default function Class() {
     return null;
   }
   return (
-      <ImageBackground source={require('../../../assets/images/bgg.jpeg')} style={styles.bgimage}>
+      <ImageBackground source={actualClass?.image ||require('../../../assets/images/bgg.jpeg')} style={styles.bgimage}>
         <LinearGradient
         colors={['rgba(0, 0, 0, 0.144)', 'rgba(0, 0, 0, 0.9)']}
         start={[0, 0]}
@@ -35,7 +35,6 @@ export default function Class() {
         style={styles.gradient}
       >
         <View style={{flex: 1, height: '100%'}}>
-            <ScrollView>
         <View style={{paddingVertical: 15,
     alignItems: 'center',
     gap: 30}}>
@@ -46,7 +45,6 @@ export default function Class() {
         return <IndividualCard key={i} URL={`/classes/${actualClass?.URL}/${e.URL}`} name={e.name} image={e.image} />
       })}
     </View>
-    </ScrollView>
     </View>
     </LinearGradient>
       </ImageBackground>
